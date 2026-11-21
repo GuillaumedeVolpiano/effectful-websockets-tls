@@ -10,3 +10,4 @@ optional-packages:
   ../streamly-websockets
   ../streamly-websockets-tls
   ../streamly-network-tcp
+  ../streamly-flatparse
