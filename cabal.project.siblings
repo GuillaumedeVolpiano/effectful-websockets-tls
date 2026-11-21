@@ -1,0 +1,11 @@
+-- For working on this package and the libraries it is built on at the same
+-- time: cabal build --project-file=cabal.project.siblings
+packages: .
+
+-- The libraries this one is built on, when they are checked out next to it.
+optional-packages:
+  ../effectful-websockets
+  ../streamly-http
+  ../streamly-network-tls
+  ../streamly-websockets
+  ../streamly-websockets-tls
