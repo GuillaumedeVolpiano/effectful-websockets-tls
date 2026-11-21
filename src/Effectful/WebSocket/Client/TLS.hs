@@ -42,7 +42,7 @@ import Streamly.Data.StreamK qualified as StreamK
 import Streamly.External.Network.HTTP (Transport (..))
 import Streamly.External.Network.TLS qualified as Tls
 import Streamly.External.Network.WebSocket qualified as WS
-import Streamly.External.Network.WebSocket.TLS (Certificates (..), Scheme (..), tlsTransport, urlConfig)
+import Streamly.External.Network.WebSocket.TLS (Certificates (..), Scheme (..), urlConfig)
 
 -- | Open a WebSocket over TLS and run an action over it, as
 -- 'runWebSocketClient' does in clear. The server must present a
@@ -69,7 +69,7 @@ runWebSocketSecure trusted config = runWebSocketOver open config.pingPong
       -- fails after it.
       result <- newIORef Nothing
       attempt <- try . try . Tls.withConnection secure $ \connection ->
-        WS.withConnectionOver (guarded (tlsTransport connection)) settings use >>= writeIORef result . Just
+        WS.withConnectionOver (guarded (Tls.transport connection)) settings use >>= writeIORef result . Just
       done <- readIORef result
       case (done, attempt) of
         (Just value, _) -> pure value

@@ -9,3 +9,4 @@ optional-packages:
   ../streamly-network-tls
   ../streamly-websockets
   ../streamly-websockets-tls
+  ../streamly-network-tcp
