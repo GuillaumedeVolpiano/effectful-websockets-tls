@@ -1,6 +1,6 @@
 cabal-version:   3.12
 name:            effectful-websockets-tls
-version:         0.1.0.0
+version:         0.1.0.1
 synopsis:        The WebSocket effect of effectful-websockets, over TLS too
 description:
   Interpreters for the WebSocket effect of effectful-websockets that open
@@ -51,9 +51,9 @@ library
     , effectful-core           ^>=2.7.1
     , effectful-websockets     ^>=0.1.1
     , streamly-core            ^>=0.3.3
-    , streamly-http            ^>=0.2
+    , streamly-http            ^>=0.3
     , streamly-network-tls     ^>=0.2
-    , streamly-websockets      ^>=0.2
+    , streamly-websockets      ^>=0.3
     , streamly-websockets-tls  ^>=0.1
     , tls                      ^>=2.5
 
@@ -72,7 +72,7 @@ test-suite effectful-websockets-tls-test
     , effectful-websockets-tls
     , network                   ^>=3.2
     , streamly-core             ^>=0.3.3
-    , streamly-websockets       ^>=0.2
+    , streamly-websockets       ^>=0.3
     , streamly-websockets-tls   ^>=0.1
     , tasty                     ^>=1.5
     , tasty-hunit               ^>=0.10
