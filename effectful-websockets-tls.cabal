@@ -73,14 +73,14 @@ test-suite effectful-websockets-tls-test
   ghc-options:    -threaded
   build-depends:
     , async                     ^>=2.2
-    , base                      >=4.19 && <4.22
-    , bytestring                ^>=0.12
-    , effectful-core            ^>=2.7.1
-    , effectful-websockets      ^>=0.1.1
+    , base
+    , bytestring
+    , effectful-core
+    , effectful-websockets
     , effectful-websockets-tls
     , network                   ^>=3.2
-    , streamly-core             ^>=0.3.3
-    , streamly-websockets       ^>=0.3
-    , streamly-websockets-tls   ^>=0.1
+    , streamly-core
+    , streamly-websockets
+    , streamly-websockets-tls
     , tasty                     ^>=1.5
     , tasty-hunit               ^>=0.10
