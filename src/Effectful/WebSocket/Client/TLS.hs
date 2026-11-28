@@ -6,11 +6,13 @@
 -- Interpreters for the effect of "Effectful.WebSocket" that open the
 -- connection over TLS, or as a URL says.
 --
--- > import Effectful
+-- > {-# LANGUAGE OverloadedStrings #-}
+-- > import Effectful (runEff)
 -- > import Effectful.Error.Static (runErrorNoCallStack)
--- > import Effectful.WebSocket
--- > import Effectful.WebSocket.Client
--- > import Effectful.WebSocket.Client.TLS
+-- > import Effectful.WebSocket (Message, receiveMessage, sendText)
+-- > import Effectful.WebSocket.Client (WebSocketError, clientConfig)
+-- > import Effectful.WebSocket.Client.TLS (Certificates (SystemCertificates),
+-- >                                        runWebSocketSecure)
 -- >
 -- > hello :: IO (Either WebSocketError (Maybe Message))
 -- > hello = runEff . runErrorNoCallStack . runWebSocketSecure SystemCertificates (clientConfig "example.org" 443 "/chat") $ do
